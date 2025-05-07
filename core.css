@@ -1,0 +1,154 @@
+/* === ZED Insights - Core CSS === */
+
+.race-helper-overlay {
+    position: fixed;
+    top: 80px;
+    right: 15px;
+    width: 400px;
+    max-height: 85vh;
+    background-color: rgba(25, 28, 36, 0.95); /* Dark background */
+    color: #e8e8e8; /* Base text */
+    border: 1px solid #383c4a; /* Softer border */
+    border-radius: 8px;
+    padding: 18px;
+    z-index: 10000;
+    font-family: 'Figtree', sans-serif;
+    font-size: 13px;
+    overflow-y: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.race-helper-overlay h3,
+.race-helper-overlay h4 {
+    color: #f0f0f0;
+    border-bottom: 1px solid #4a4e5d;
+    padding-bottom: 5px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.race-helper-overlay h4 {
+    font-size: 1.1em;
+    margin-top: 15px;
+}
+
+.race-helper-overlay .stat-section {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #383c4a;
+}
+
+.race-helper-overlay .stat-section:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.race-helper-overlay .loading,
+.race-helper-overlay .error {
+    text-align: center;
+    padding: 25px;
+    font-style: italic;
+    color: #9099a3;
+}
+
+.race-helper-overlay .error {
+    color: #ff8a8a;
+}
+
+/* Header area for buttons (Refresh, Toggle) */
+.race-helper-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #4a4e5d;
+}
+
+.race-helper-header-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.race-helper-refresh-btn,
+.race-helper-toggle-btn {
+    background: none;
+    border: 1px solid #5a5e6b;
+    color: #ccc;
+    padding: 3px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8em;
+    opacity: 0.7;
+    transition: opacity 0.2s, background-color 0.2s, border-color 0.2s;
+}
+
+.race-helper-toggle-btn {
+    margin-left: 10px;
+    font-size: 0.9em; /* Slightly larger for icon */
+    line-height: 1;
+    padding: 3px 6px;
+}
+
+.race-helper-refresh-btn:hover,
+.race-helper-toggle-btn:hover {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #777b8a;
+}
+
+/* Tab System Base Styles */
+.race-helper-tabs {
+    display: flex;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #383c4a;
+}
+
+.race-helper-tab-button {
+    padding: 8px 15px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: #a0a0a0;
+    font-size: 0.9em;
+    margin-right: 5px;
+    border-bottom: 3px solid transparent;
+    transition: color 0.2s, border-bottom-color 0.2s;
+    position: relative;
+    top: 1px; /* Align bottom border with container border */
+}
+
+.race-helper-tab-button:hover {
+    color: #f0f0f0;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.race-helper-tab-button.active {
+    color: #ffffff;
+    font-weight: 600;
+    border-bottom-color: #81DA94; /* Highlight color */
+    background-color: rgba(129, 218, 148, 0.1);
+}
+
+.race-helper-tab-content {
+    display: none; /* Hidden by default, JS will show active */
+}
+
+.race-helper-tab-content.active {
+    display: block;
+}
+
+/* Content Area Minimizer Support */
+#race-helper-main-content {
+    /* transition: display 0.3s ease; */ /* JS will handle display:none/block */
+}
+
+.race-helper-overlay.collapsed #race-helper-main-content,
+.race-helper-overlay.collapsed .race-helper-tabs {
+    display: none;
+}
+
+/* General utility classes (can be expanded) */
+.hidden {
+    display: none !important;
+} 
